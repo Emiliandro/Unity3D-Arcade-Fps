@@ -6,7 +6,7 @@ public class FireballController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        gameObject.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 30);
+        gameObject.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 26);
     }
 
     void onCollisionEnter(Collision other) {
@@ -15,8 +15,8 @@ public class FireballController : MonoBehaviour {
 
     void Start()
     {
-        Invoke("destroyBullet", 1f);
-        Invoke("ativarColisao", 0.2f);
+        Invoke("destroyBullet", 30f * Time.deltaTime);
+        Invoke("ativarColisao", 5f * Time.deltaTime);
     }
 
     void destroyBullet()
