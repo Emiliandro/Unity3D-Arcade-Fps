@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     
         
     void Start () {
+        Time.timeScale = 1;
         tempo_de_jogo = Random.Range(35,55);
         valorAtual = tempo_de_jogo;
     }
