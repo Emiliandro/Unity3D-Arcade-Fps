@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemiesCollider : MonoBehaviour {
 
-    [Header("Indique a velocidade da ação")]
+    [Header("Indique a velocidade do vermelho")]
     public float tempo = 2f;
     private SpriteRenderer sprite;
 
@@ -11,6 +11,7 @@ public class EnemiesCollider : MonoBehaviour {
     void OnCollisionEnter (Collision other) {
         if (other.gameObject.tag == "Bullet")
         {
+            GetComponent<AudioSource>().Play();
             startRed();
         }
     }
