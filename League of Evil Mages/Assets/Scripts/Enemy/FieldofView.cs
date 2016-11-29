@@ -13,6 +13,13 @@ public class FieldofView : MonoBehaviour {
 
     public List<Transform> visibleTargets = new List<Transform>();
 
+    public EnemyMove enemyMove;
+    public EnemyAttack attackEnemy;
+
+    private void Awake(){
+        attackEnemy = GetComponent<EnemyAttack>();
+    }
+
     void Start(){
         StartCoroutine("FindTargetWithDelay", .2f);
     }
@@ -45,6 +52,18 @@ public class FieldofView : MonoBehaviour {
         }
 
         return new Vector3(Mathf.Sin(angleInDegree * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegree * Mathf.Deg2Rad));
+    }
+
+    public void Update(){
+
+        if (visibleTargets == null)
+            return;
+
+        if(visibleTargets.Count > 0){
+            foreach(Transform t in visibleTargets){
+                attackEnemy.AttackTarget(t);
+            }
+        }
     }
 
 }
