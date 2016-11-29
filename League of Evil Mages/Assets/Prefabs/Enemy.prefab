@@ -44,6 +44,8 @@ GameObject:
   - 114: {fileID: 114000014273779824}
   - 65: {fileID: 65000013199034106}
   - 114: {fileID: 114000010292634538}
+  - 195: {fileID: 195000010312297738}
+  - 114: {fileID: 114000011843199930}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -202,6 +204,23 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114000011843199930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010780128982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b7d1dbffe9393d41ac9e9de1fba5b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 42
+  attackDamage: 0
+  bulletSpeed: 4
+  cooldownTime: 16
+  attackGameObject: {fileID: 1000010014395488, guid: 3a128652d6e3aea4699770c5bc5c005e,
+    type: 2}
 --- !u!114 &114000013228533058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +279,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   visibleTargets: []
+  enemyMove:
+    velocity: 0
+    isCanJump: 0
+    navAgent: {fileID: 0}
+  attackEnemy: {fileID: 0}
 --- !u!114 &114000014273779824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +296,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempo: 2
+--- !u!195 &195000010312297738
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010780128982}
+  m_Enabled: 1
+  m_Radius: 1.18
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3.64
+  m_BaseOffset: 1.82
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!212 &212000010340057986
 SpriteRenderer:
   m_ObjectHideFlags: 1
