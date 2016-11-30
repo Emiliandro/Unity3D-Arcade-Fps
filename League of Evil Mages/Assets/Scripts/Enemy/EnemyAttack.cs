@@ -30,7 +30,6 @@ public class EnemyAttack : MonoBehaviour {
             return;
         if (Time.time < nextTimeAttack)
             return;
-        Debug.LogError(string.Format("Atacou, Time: {0}, NextAttack: {1}",Time.time, nextTimeAttack));
         GameObject bullet = Instantiate(attackGameObject, transform.position, transform.rotation) as GameObject;
         bullet.GetComponent<EnemyBullet>().velocity = bulletSpeed;
         nextTimeAttack = Time.time + cooldownTime;

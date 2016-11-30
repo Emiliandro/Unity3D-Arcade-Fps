@@ -12,8 +12,6 @@ public class FieldofView : MonoBehaviour {
     public LayerMask obstacleMask;
 
     public List<Transform> visibleTargets = new List<Transform>();
-
-    public EnemyMove enemyMove;
     public EnemyAttack attackEnemy;
 
     private void Awake(){
